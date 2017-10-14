@@ -1,13 +1,16 @@
 <?php
 for ($i = 1; $i <= 100; $i++)
 {
-    if (isDivisibleForThree($i) && isDivisibleForFive($i)) {
+    $div3 = 3;
+    $div5 = 5;
+    
+    if (isDivisibleFor($i,$div3) && isDivisibleFor($i,$div5)) {
         echo "FizzBuzz";
     }
-    else if (isDivisibleForThree($i)) {
+    else if (isDivisibleFor($i,$div3)) {
         echo "Fizz";
     }
-    else if (isDivisibleForFive($i)){
+    else if (isDivisibleFor($i,$div5)){
         echo "Buzz";
     }
     else {
@@ -17,13 +20,8 @@ for ($i = 1; $i <= 100; $i++)
     echo"<br />";
 }
 
-function isDivisibleForThree (int $num): bool{
+function isDivisibleFor (int $num, int $div): bool {
     
-    return ($num % 3 == 0);
-}
-
-function isDivisibleForFive (int $num): bool {
-    
-    return ($num % 5 == 0);
+    return ($num % $div == 0);
 }
 ?>
